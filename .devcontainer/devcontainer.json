@@ -1,0 +1,29 @@
+{
+  "name": "Airline Analytics - Snowflake",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": false,
+      "dockerDashComposeVersion": "v2"
+    }
+  },
+  "forwardPorts": [8080, 8501],
+  "portsAttributes": {
+    "8080": { "label": "Airflow UI", "onAutoForward": "openBrowser" },
+    "8501": { "label": "Streamlit Dashboard", "onAutoForward": "notify" }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "innoverio.vscode-dbt-power-user",
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install dbt-snowflake==1.9.0 && cp .env.example .env && echo '✅ Codespace ready! Edit .env with your credentials, then run: docker compose up -d'"
+}
