@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# dbt
+dbt_packages/
+logs/
+.user.yml

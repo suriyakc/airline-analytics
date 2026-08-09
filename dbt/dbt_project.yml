@@ -1,0 +1,29 @@
+name: airline_analytics
+version: "1.0.0"
+config-version: 2
+
+profile: airline_analytics
+
+model-paths: ["models"]
+seed-paths:  ["seeds"]
+test-paths:  ["tests"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  airline_analytics:
+    bronze:
+      +schema: bronze
+      +materialized: view
+    silver:
+      +schema: silver
+      +materialized: table
+    gold:
+      +schema: gold
+      +materialized: table
+
+seeds:
+  airline_analytics:
+    +schema: bronze
