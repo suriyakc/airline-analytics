@@ -1,0 +1,94 @@
+airport_icao,airport_name,city,country,latitude,longitude,timezone,utc_offset_hours,is_tracked
+KJFK,John F Kennedy International,New York,United States,40.6413,-73.7781,America/New_York,-5,true
+EGLL,Heathrow,London,United Kingdom,51.4700,-0.4543,Europe/London,0,true
+LFPG,Charles de Gaulle,Paris,France,49.0097,2.5479,Europe/Paris,1,true
+RJTT,Haneda,Tokyo,Japan,35.5494,139.7798,Asia/Tokyo,9,true
+OMDB,Dubai International,Dubai,United Arab Emirates,25.2532,55.3657,Asia/Dubai,4,true
+YSSY,Sydney Kingsford Smith,Sydney,Australia,-33.9461,151.1772,Australia/Sydney,11,true
+YMML,Melbourne Tullamarine,Melbourne,Australia,-37.6690,144.8410,Australia/Melbourne,11,false
+RJFF,Fukuoka,Fukuoka,Japan,33.5859,130.4511,Asia/Tokyo,9,false
+YBBN,Brisbane,Brisbane,Australia,-27.3842,153.1175,Australia/Brisbane,10,false
+KLAX,Los Angeles International,Los Angeles,United States,33.9425,-118.4081,America/Los_Angeles,-8,false
+RJCC,New Chitose,Sapporo,Japan,42.7752,141.6924,Asia/Tokyo,9,false
+EDDF,Frankfurt,Frankfurt,Germany,50.0379,8.5622,Europe/Berlin,1,false
+EHAM,Schiphol,Amsterdam,Netherlands,52.3086,4.7639,Europe/Amsterdam,1,false
+RJOO,Itami,Osaka,Japan,34.7855,135.4381,Asia/Tokyo,9,false
+LEMD,Adolfo Suarez Madrid-Barajas,Madrid,Spain,40.4936,-3.5668,Europe/Madrid,1,false
+EDDM,Munich,Munich,Germany,48.3538,11.7861,Europe/Berlin,1,false
+EIDW,Dublin,Dublin,Ireland,53.4213,-6.2701,Europe/Dublin,0,false
+LSGG,Geneva,Geneva,Switzerland,46.2381,6.1089,Europe/Zurich,1,false
+KSFO,San Francisco International,San Francisco,United States,37.6213,-122.3790,America/Los_Angeles,-8,false
+ROAH,Naha,Okinawa,Japan,26.1958,127.6459,Asia/Tokyo,9,false
+KBOS,Logan International,Boston,United States,42.3656,-71.0096,America/New_York,-5,false
+LSZH,Zurich,Zurich,Switzerland,47.4647,8.5492,Europe/Zurich,1,false
+LEBL,El Prat,Barcelona,Spain,41.2971,2.0785,Europe/Madrid,1,false
+EKCH,Kastrup,Copenhagen,Denmark,55.6181,12.6561,Europe/Copenhagen,1,false
+LIRF,Fiumicino,Rome,Italy,41.8003,12.2389,Europe/Rome,1,false
+LTFM,Istanbul,Istanbul,Turkey,41.2608,28.7419,Europe/Istanbul,3,false
+EGCC,Manchester,Manchester,United Kingdom,53.3537,-2.2750,Europe/London,0,false
+YPAD,Adelaide,Adelaide,Australia,-34.9450,138.5306,Australia/Adelaide,10.5,false
+VHHH,Hong Kong International,Hong Kong,China,22.3080,113.9185,Asia/Hong_Kong,8,false
+EGPH,Edinburgh,Edinburgh,United Kingdom,55.9508,-3.3725,Europe/London,0,false
+YBCG,Gold Coast,Gold Coast,Australia,-28.1644,153.5047,Australia/Brisbane,10,false
+LIMC,Malpensa,Milan,Italy,45.6306,8.7231,Europe/Rome,1,false
+LIML,Linate,Milan,Italy,45.4456,9.2778,Europe/Rome,1,false
+LOWW,Vienna International,Vienna,Austria,48.1103,16.5697,Europe/Vienna,1,false
+YSCB,Canberra,Canberra,Australia,-35.3069,149.1946,Australia/Sydney,11,false
+KATL,Hartsfield-Jackson,Atlanta,United States,33.6407,-84.4277,America/New_York,-5,false
+EDDB,Berlin Brandenburg,Berlin,Germany,52.3667,13.5033,Europe/Berlin,1,false
+KMIA,Miami International,Miami,United States,25.7959,-80.2870,America/New_York,-5,false
+ESSA,Arlanda,Stockholm,Sweden,59.6519,17.9186,Europe/Stockholm,1,false
+CYYZ,Pearson International,Toronto,Canada,43.6777,-79.6248,America/Toronto,-5,false
+NZAA,Auckland,Auckland,New Zealand,-37.0082,174.7850,Pacific/Auckland,13,false
+EPWA,Chopin,Warsaw,Poland,52.1657,20.9671,Europe/Warsaw,1,false
+YPPH,Perth,Perth,Australia,-31.9403,115.9670,Australia/Perth,8,false
+RJCJ,Chitose Air Base,Chitose,Japan,42.7945,141.6664,Asia/Tokyo,9,false
+RJBB,Kansai International,Osaka,Japan,34.4347,135.2440,Asia/Tokyo,9,false
+EDDL,Dusseldorf,Dusseldorf,Germany,51.2895,6.7668,Europe/Berlin,1,false
+KORD,O Hare International,Chicago,United States,41.9742,-87.9073,America/Chicago,-6,false
+LFBO,Blagnac,Toulouse,France,43.6291,1.3638,Europe/Paris,1,false
+LIPZ,Marco Polo,Venice,Italy,45.5053,12.3519,Europe/Rome,1,false
+VTBS,Suvarnabhumi,Bangkok,Thailand,13.6900,100.7501,Asia/Bangkok,7,false
+ENGM,Gardermoen,Oslo,Norway,60.1939,11.1004,Europe/Oslo,1,false
+RJOT,Takamatsu,Takamatsu,Japan,34.2142,134.0156,Asia/Tokyo,9,false
+EDDH,Hamburg,Hamburg,Germany,53.6304,9.9882,Europe/Berlin,1,false
+EGPF,Glasgow,Glasgow,United Kingdom,55.8642,-4.4331,Europe/London,0,false
+LKPR,Vaclav Havel,Prague,Czech Republic,50.1008,14.2600,Europe/Prague,1,false
+KEWR,Newark Liberty,Newark,United States,40.6895,-74.1745,America/New_York,-5,false
+LFML,Marseille Provence,Marseille,France,43.4393,5.2214,Europe/Paris,1,false
+RKSS,Gimpo International,Seoul,South Korea,37.5586,126.7906,Asia/Seoul,9,false
+VIDP,Indira Gandhi International,New Delhi,India,28.5562,77.1000,Asia/Kolkata,5.5,false
+KDFW,Dallas Fort Worth,Dallas,United States,32.8998,-97.0403,America/Chicago,-6,false
+EFHK,Helsinki-Vantaa,Helsinki,Finland,60.3172,24.9633,Europe/Helsinki,2,false
+LPPT,Lisbon Portela,Lisbon,Portugal,38.7756,-9.1354,Europe/Lisbon,0,false
+LGAV,Eleftherios Venizelos,Athens,Greece,37.9364,23.9445,Europe/Athens,2,false
+KSEA,Seattle-Tacoma,Seattle,United States,47.4502,-122.3088,America/Los_Angeles,-8,false
+LIPE,Guglielmo Marconi,Bologna,Italy,44.5354,11.2887,Europe/Rome,1,false
+WMKK,Kuala Lumpur International,Kuala Lumpur,Malaysia,2.7456,101.7099,Asia/Kuala_Lumpur,8,false
+LFLL,Saint-Exupery,Lyon,France,45.7256,5.0811,Europe/Paris,1,false
+WSAP,Changi,Singapore,Singapore,1.3502,103.9940,Asia/Singapore,8,false
+RJFT,Kumamoto,Kumamoto,Japan,32.8373,130.8551,Asia/Tokyo,9,false
+KIAD,Washington Dulles,Washington DC,United States,38.9531,-77.4565,America/New_York,-5,false
+RCSS,Songshan,Taipei,Taiwan,25.0694,121.5525,Asia/Taipei,8,false
+KLAS,McCarran International,Las Vegas,United States,36.0840,-115.1537,America/Los_Angeles,-8,false
+LROP,Henri Coanda,Bucharest,Romania,44.5711,26.0850,Europe/Bucharest,2,false
+KFLL,Fort Lauderdale-Hollywood,Fort Lauderdale,United States,26.0726,-80.1527,America/New_York,-5,false
+EGPD,Aberdeen,Aberdeen,United Kingdom,57.2019,-2.1978,Europe/London,0,false
+EGNT,Newcastle,Newcastle,United Kingdom,55.0374,-1.6917,Europe/London,0,false
+LHBP,Liszt Ferenc,Budapest,Hungary,47.4369,19.2556,Europe/Budapest,1,false
+RJBE,Kobe,Kobe,Japan,34.6328,135.2240,Asia/Tokyo,9,false
+CYUL,Trudeau International,Montreal,Canada,45.4706,-73.7408,America/Montreal,-5,false
+LFBD,Merignac,Bordeaux,France,44.8283,-0.7156,Europe/Paris,1,false
+KIAH,George Bush Intercontinental,Houston,United States,29.9902,-95.3368,America/Chicago,-6,false
+RPLL,Ninoy Aquino International,Manila,Philippines,14.5086,121.0198,Asia/Manila,8,false
+RCTP,Taoyuan International,Taipei,Taiwan,25.0777,121.2325,Asia/Taipei,8,false
+SBGR,Guarulhos International,Sao Paulo,Brazil,-23.4356,-46.4731,America/Sao_Paulo,-3,false
+CYVR,Vancouver International,Vancouver,Canada,49.1947,-123.1839,America/Vancouver,-8,false
+BIKF,Keflavik International,Reykjavik,Iceland,63.9850,-22.6056,Atlantic/Reykjavik,0,false
+RJAA,Narita International,Tokyo,Japan,35.7647,140.3864,Asia/Tokyo,9,false
+WSSS,Changi International,Singapore,Singapore,1.3644,103.9915,Asia/Singapore,8,false
+FAOR,OR Tambo International,Johannesburg,South Africa,-26.1392,28.2460,Africa/Johannesburg,2,false
+NZCH,Christchurch International,Christchurch,New Zealand,-43.4894,172.5322,Pacific/Auckland,13,false
+NZWN,Wellington International,Wellington,New Zealand,-41.3272,174.8053,Pacific/Auckland,13,false
+SAEZ,Ministro Pistarini,Buenos Aires,Argentina,-34.8222,-58.5358,America/Argentina/Buenos_Aires,-3,false
+FACT,Cape Town International,Cape Town,South Africa,-33.9649,18.6017,Africa/Johannesburg,2,false

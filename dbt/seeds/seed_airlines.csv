@@ -1,0 +1,72 @@
+callsign_prefix,airline_name,airline_iata,country,alliance
+AAL,American Airlines,AA,United States,oneworld
+AAR,Asiana Airlines,OZ,South Korea,Star Alliance
+ACA,Air Canada,AC,Canada,Star Alliance
+AFR,Air France,AF,France,SkyTeam
+AIC,Air India,AI,India,Star Alliance
+AIJ,Interjet,4O,Mexico,none
+AJX,Air Japan,NQ,Japan,none
+ANA,All Nippon Airways,NH,Japan,Star Alliance
+ANZ,Air New Zealand,NZ,New Zealand,Star Alliance
+APJ,Peach Aviation,MM,Japan,none
+ASA,Alaska Airlines,AS,United States,oneworld
+AUA,Austrian Airlines,OS,Austria,Star Alliance
+AVA,Avianca,AV,Colombia,Star Alliance
+AZA,Alitalia / ITA Airways,AZ,Italy,SkyTeam
+BAW,British Airways,BA,United Kingdom,oneworld
+BEE,Flybe,BE,United Kingdom,none
+BEL,Brussels Airlines,SN,Belgium,Star Alliance
+BER,Air Berlin,AB,Germany,none
+CAL,China Airlines,CI,Taiwan,SkyTeam
+CCA,Air China,CA,China,Star Alliance
+CES,China Eastern,MU,China,SkyTeam
+CLH,Lufthansa CityLine,CL,Germany,Star Alliance
+CPA,Cathay Pacific,CX,Hong Kong,oneworld
+CSN,China Southern,CZ,China,SkyTeam
+DAL,Delta Air Lines,DL,United States,SkyTeam
+DLH,Lufthansa,LH,Germany,Star Alliance
+EIN,Aer Lingus,EI,Ireland,none
+EJU,easyJet Europe,EC,Austria,none
+ETD,Etihad Airways,EY,United Arab Emirates,none
+ETH,Ethiopian Airlines,ET,Ethiopia,Star Alliance
+EVA,EVA Air,BR,Taiwan,Star Alliance
+EWG,Eurowings,EW,Germany,none
+EZY,easyJet,U2,United Kingdom,none
+FDX,FedEx Express,FX,United States,none
+FIN,Finnair,AY,Finland,oneworld
+GEC,Lufthansa Cargo,GE,Germany,Star Alliance
+IBE,Iberia,IB,Spain,oneworld
+IBK,Norwegian Air International,D8,Ireland,none
+ICE,Icelandair,FI,Iceland,none
+JAL,Japan Airlines,JL,Japan,oneworld
+JBU,JetBlue Airways,B6,United States,none
+JJA,Jeju Air,7C,South Korea,none
+JST,Jetstar Airways,JQ,Australia,none
+KAL,Korean Air,KE,South Korea,SkyTeam
+KLM,KLM Royal Dutch,KL,Netherlands,SkyTeam
+LOT,LOT Polish Airlines,LO,Poland,Star Alliance
+NAX,Norwegian Air Shuttle,DY,Norway,none
+NCA,Nippon Cargo Airlines,KZ,Japan,none
+QFA,Qantas,QF,Australia,oneworld
+QTR,Qatar Airways,QR,Qatar,oneworld
+RYR,Ryanair,FR,Ireland,none
+RZO,SCAT Airlines,DV,Kazakhstan,none
+SAS,Scandinavian Airlines,SK,Scandinavia,Star Alliance
+SIA,Singapore Airlines,SQ,Singapore,Star Alliance
+SKW,SkyWest Airlines,OO,United States,none
+SNO,SkyNorway,SN,Norway,none
+SWA,Southwest Airlines,WN,United States,none
+SWR,Swiss International,LX,Switzerland,Star Alliance
+TAP,TAP Air Portugal,TP,Portugal,Star Alliance
+THA,Thai Airways,TG,Thailand,Star Alliance
+THY,Turkish Airlines,TK,Turkey,Star Alliance
+TUI,TUI Airways,BY,United Kingdom,none
+TVF,Transavia France,TO,France,none
+UAE,Emirates,EK,United Arab Emirates,none
+UAL,United Airlines,UA,United States,Star Alliance
+UPS,UPS Airlines,5X,United States,none
+VIR,Virgin Atlantic,VS,United Kingdom,none
+VOZ,Virgin Australia,VA,Australia,none
+VJC,VietJet Air,VJ,Vietnam,none
+VLG,Vueling,VY,Spain,none
+WZZ,Wizz Air,W6,Hungary,none
