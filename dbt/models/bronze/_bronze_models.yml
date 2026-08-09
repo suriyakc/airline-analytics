@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: brz_raw_flights
+    description: Bronze layer, direct view over the raw flights table with no transformations.
+    columns:
+      - name: icao24
+        tests:
+          - not_null
+      - name: first_seen
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: last_seen
+        tests:
+          - not_null
+      - name: flight_direction
+        tests:
+          - accepted_values:
+              values: ["arrival", "departure"]

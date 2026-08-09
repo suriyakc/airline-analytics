@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: raw
+    database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+    schema: "{{ env_var('SNOWFLAKE_SCHEMA', 'RAW') }}"
+    tables:
+      - name: raw_flights
+        description: Raw flight data ingested from the OpenSky Network API via Airflow.
+        columns:
+          - name: icao24
+            description: Unique ICAO 24-bit transponder address (hex).
+          - name: first_seen
+            description: Estimated departure time (UTC).
+          - name: est_departure_airport
+            description: ICAO code of estimated departure airport.
+          - name: last_seen
+            description: Estimated arrival time (UTC).
+          - name: est_arrival_airport
+            description: ICAO code of estimated arrival airport.
+          - name: callsign
+            description: Flight callsign (8 chars max).
+          - name: flight_direction
+            description: Whether this record was fetched as an arrival or departure.
+          - name: queried_airport
+            description: The airport used in the API query.
+          - name: ingested_at
+            description: Timestamp when the record was loaded into Snowflake.
