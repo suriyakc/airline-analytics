@@ -35,6 +35,7 @@ The idea is to keep ingestion and transformation separate. Raw data lands first,
 | Snowflake          | Stores the data across the different layers             |
 | dbt                | Handles transformation, testing and documentation       |
 | Streamlit + Plotly | Serves the dashboard                                    |
+| GitHub Actions     | Validates the dbt project on every pull request         |
 
 ## Data model
 
@@ -42,10 +43,19 @@ The idea is to keep ingestion and transformation separate. Raw data lands first,
 | ------ | --------------- | ------------------------------------------------------------------------ |
 | RAW    | Table           | Stores the API response with an `ingested_at` timestamp                  |
 | BRONZE | View            | Basic column selection                                                   |
-| SILVER | Tables          | Deduplication, renaming, type casting, surrogate key and flight duration |
+| SILVER | Tables, `slv_flights` incremental        | Deduplication, renaming, type casting, surrogate key and flight duration |
 | GOLD   | Tables          | Daily airport traffic, routes, hourly activity and airline traffic       |
 
 Raw data is loaded before any cleaning or transformation. If I get something wrong in the modelling, I can fix the SQL and rebuild from the raw layer instead of having to call the API again.
+
+`slv_flights` is incremental and merges on the surrogate key, so a re-run only
+processes batches at or after the newest one already in the table.
+
+There are two different duplicate problems here and they need two different
+mechanisms. The window function removes duplicates inside a single batch. The
+merge handles the same flight turning up again in a later batch, where the
+window function can't see the earlier copy. Re-running the model processes rows
+without changing the row count.
 
 There are currently **8 dbt models and 20 tests**.
 
@@ -55,6 +65,11 @@ The tests cover things like:
 * not-null checks on identifiers and timestamps
 * accepted values for flight direction
 * reasonable ranges for flight duration
+
+A GitHub Actions workflow runs `dbt deps` and `dbt parse` on every pull request.
+It doesn't connect to Snowflake, so it catches broken refs, Jinja errors and
+malformed YAML without needing credentials or a running warehouse. That also
+means it keeps working after my Snowflake trial expires.
 
 ![dbt build](docs/dbt-build.png)
 
@@ -211,6 +226,7 @@ include/       API client, Snowflake loader and backfill script
 dbt/           dbt project: models, seeds, macros and tests
 streamlit/     Dashboard and its image
 docs/          Screenshots and architecture diagram
+.github/       GitHub Actions CI workflow
 ```
 
 I kept the API and Snowflake loading logic in `include/` rather than putting everything directly inside the DAG files.
@@ -224,7 +240,7 @@ The backfill script also imports the same API and loader modules used by the dai
 * Fix the route double count in `gld_route_analysis`
 * Add `flight_date` to the airline and route models so the dashboard can filter by date range
 * Move the local time conversion onto Snowflake's `convert_timezone`
-* Make the silver model incremental instead of rebuilding it every run
+* Extend CI to run `dbt build` against a dedicated Snowflake CI schema
 * Send a Slack alert when a dbt test fails
 
 ## Current data
