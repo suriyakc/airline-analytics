@@ -1,5 +1,22 @@
+{{ config(
+    materialized = 'incremental',
+    unique_key = 'flight_id',
+    incremental_strategy = 'merge'
+) }}
+
 with raw as (
     select * from {{ ref('brz_raw_flights') }}
+
+    {% if is_incremental() %}
+    -- Only look at batches at or after the newest one already loaded.
+    -- The most recent batch is reprocessed, which is harmless because the
+    -- merge on flight_id is idempotent, and it protects against a batch
+    -- that was only partially loaded when the last run happened.
+    where ingested_at >= (
+        select coalesce(max(ingested_at), '1900-01-01'::timestamp_ntz)
+        from {{ this }}
+    )
+    {% endif %}
 ),
 
 deduplicated as (

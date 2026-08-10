@@ -1,0 +1,35 @@
+name: dbt CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate dbt project
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dbt
+        run: pip install dbt-snowflake==1.9.0
+
+      - name: Install dbt packages
+        run: dbt deps --project-dir dbt --profiles-dir dbt
+
+      - name: Parse the project
+        run: dbt parse --project-dir dbt --profiles-dir dbt
+        env:
+          SNOWFLAKE_ACCOUNT: placeholder
+          SNOWFLAKE_USER: placeholder
+          SNOWFLAKE_PASSWORD: placeholder
+          SNOWFLAKE_WAREHOUSE: placeholder
+          SNOWFLAKE_DATABASE: placeholder
