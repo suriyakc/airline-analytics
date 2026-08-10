@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 870" width="1440" height="870" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#55627A"/>
+    </marker>
+    <marker id="arwDbt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#EA580C"/>
+    </marker>
+    <marker id="arwTest" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#C0392B"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1440" height="870" fill="#FBFCFD"/>
+
+  <!-- Title -->
+  <text x="40" y="52" font-size="27" font-weight="700" fill="#0B1220">Airline Analytics</text>
+  <text x="40" y="79" font-size="14.5" fill="#55627A">OpenSky Network API · orchestrated with Airflow · modelled and tested with dbt · warehoused in Snowflake · served in Streamlit</text>
+  <line x1="40" y1="98" x2="1400" y2="98" stroke="#DDE3EC" stroke-width="1"/>
+
+  <!-- Source -->
+  <rect x="40" y="214" width="180" height="110" rx="10" fill="#E8EEFF" stroke="#3B5BDB" stroke-width="1.5"/>
+  <text x="130" y="249" font-size="14.5" font-weight="700" fill="#1B2A63" text-anchor="middle">OpenSky Network API</text>
+  <text x="130" y="273" font-size="12.5" fill="#3A4A7A" text-anchor="middle">OAuth2 token endpoint</text>
+  <text x="130" y="293" font-size="12.5" fill="#3A4A7A" text-anchor="middle">arrivals + departures</text>
+  <text x="130" y="313" font-size="12.5" fill="#3A4A7A" text-anchor="middle">6 airports</text>
+
+  <!-- Orchestration -->
+  <rect x="260" y="150" width="300" height="420" rx="14" fill="#FFFFFF" stroke="#C9D3E0" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="276" y="176" font-size="13" font-weight="700" fill="#55627A" letter-spacing="0.6">ORCHESTRATION · DOCKER COMPOSE</text>
+
+  <rect x="280" y="196" width="260" height="104" rx="9" fill="#E6F7F1" stroke="#0F9D74" stroke-width="1.5"/>
+  <text x="410" y="224" font-size="13.5" font-weight="700" fill="#0A5C46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">opensky_flights_to_snowflake</text>
+  <text x="410" y="248" font-size="12.5" fill="#0F6B52" text-anchor="middle">Airflow DAG · daily 00:00 UTC</text>
+  <text x="410" y="270" font-size="12.5" fill="#0F6B52" text-anchor="middle">extract → load → log</text>
+  <text x="410" y="290" font-size="12" fill="#3E8C76" text-anchor="middle">TaskFlow API, 2 retries</text>
+
+  <rect x="280" y="316" width="260" height="104" rx="9" fill="#E6F7F1" stroke="#0F9D74" stroke-width="1.5"/>
+  <text x="410" y="344" font-size="13.5" font-weight="700" fill="#0A5C46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">include/backfill.py</text>
+  <text x="410" y="368" font-size="12.5" fill="#0F6B52" text-anchor="middle">manual historical loads</text>
+  <text x="410" y="390" font-size="12.5" fill="#0F6B52" text-anchor="middle">paced calls, 429 backoff</text>
+  <text x="410" y="410" font-size="12" fill="#3E8C76" text-anchor="middle">reuses the same client + loader</text>
+
+  <rect x="280" y="436" width="260" height="104" rx="9" fill="#FFEDE4" stroke="#EA580C" stroke-width="1.8"/>
+  <text x="410" y="464" font-size="13.5" font-weight="700" fill="#9A3412" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">dbt_transform</text>
+  <text x="410" y="488" font-size="12.5" fill="#B4520F" text-anchor="middle">Airflow DAG · daily 01:00 UTC</text>
+  <text x="410" y="510" font-size="12.5" fill="#B4520F" text-anchor="middle">dbt deps → seed → run → test</text>
+  <text x="410" y="530" font-size="12" fill="#C0703B" text-anchor="middle">BashOperator, isolated dbt venv</text>
+
+  <!-- Snowflake -->
+  <rect x="600" y="125" width="560" height="675" rx="14" fill="#FFFFFF" stroke="#C9D3E0" stroke-width="1.4"/>
+  <text x="620" y="152" font-size="13" font-weight="700" fill="#55627A" letter-spacing="0.6">SNOWFLAKE · AIRLINE_ANALYTICS</text>
+
+  <!-- RAW -->
+  <rect x="626" y="170" width="508" height="80" rx="9" fill="#F1F4F8" stroke="#8A97AC" stroke-width="1.5"/>
+  <text x="646" y="197" font-size="14" font-weight="700" fill="#31405A">RAW · landing zone</text>
+  <text x="646" y="221" font-size="12.5" fill="#4A5A76" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">raw_flights</text>
+  <text x="646" y="240" font-size="12" fill="#66748E">Written by Python. API response as received, plus ingested_at.</text>
+  <text x="1114" y="197" font-size="11.5" fill="#66748E" text-anchor="end">loaded by Airflow</text>
+
+  <!-- dbt transformation panel -->
+  <rect x="612" y="282" width="536" height="486" rx="12" fill="#FFF7F3" stroke="#EA580C" stroke-width="2"/>
+  <text x="628" y="311" font-size="17" font-weight="700" fill="#9A3412">dbt · transformation layer</text>
+  <text x="628" y="332" font-size="12.5" fill="#B4520F">8 models · 2 seeds · 20 tests · medallion architecture · dbt-snowflake</text>
+
+  <!-- BRONZE -->
+  <rect x="626" y="342" width="508" height="110" rx="9" fill="#F6E3D3" stroke="#B06A2C" stroke-width="1.5"/>
+  <text x="646" y="369" font-size="14" font-weight="700" fill="#7C441A">BRONZE · views and seeds</text>
+  <text x="1114" y="369" font-size="11.5" fill="#9A6738" text-anchor="end">materialised as view</text>
+  <text x="646" y="393" font-size="12.5" fill="#8A5426" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">brz_raw_flights</text>
+  <text x="646" y="412" font-size="12" fill="#9A6738">Thin view over the source. Explicit column list, no logic.</text>
+  <text x="646" y="435" font-size="12.5" fill="#8A5426" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">seed_airports · seed_airlines</text>
+
+  <!-- SILVER -->
+  <rect x="626" y="476" width="508" height="110" rx="9" fill="#E6EAF0" stroke="#7D8AA0" stroke-width="1.5"/>
+  <text x="646" y="503" font-size="14" font-weight="700" fill="#2C3A52">SILVER · cleaned and typed</text>
+  <text x="1114" y="503" font-size="11.5" fill="#5C6A84" text-anchor="end">materialised as table</text>
+  <text x="646" y="527" font-size="12.5" fill="#42506B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">slv_flights</text>
+  <text x="646" y="546" font-size="12" fill="#5C6A84">Deduplicated with row_number, surrogate key, flight duration.</text>
+  <text x="646" y="569" font-size="12.5" fill="#42506B" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">slv_airports · slv_airlines</text>
+
+  <!-- GOLD -->
+  <rect x="626" y="610" width="508" height="148" rx="9" fill="#FAEFC8" stroke="#B08A18" stroke-width="1.5"/>
+  <text x="646" y="637" font-size="14" font-weight="700" fill="#6E5406">GOLD · analyst facing</text>
+  <text x="1114" y="637" font-size="11.5" fill="#8E7524" text-anchor="end">materialised as table</text>
+  <text x="646" y="662" font-size="12.5" fill="#7E6110" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">gld_daily_airport_traffic</text>
+  <text x="646" y="684" font-size="12.5" fill="#7E6110" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">gld_route_analysis</text>
+  <text x="646" y="706" font-size="12.5" fill="#7E6110" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">gld_hourly_flight_activity</text>
+  <text x="646" y="728" font-size="12.5" fill="#7E6110" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">gld_airline_traffic</text>
+  <text x="646" y="748" font-size="12" fill="#8E7524">Aggregated and joined to the dimensions. Star schema.</text>
+
+  <!-- Tests -->
+  <rect x="1200" y="180" width="200" height="185" rx="10" fill="#FCE8E8" stroke="#C0392B" stroke-width="1.5"/>
+  <text x="1300" y="209" font-size="14" font-weight="700" fill="#8C2318" text-anchor="middle">dbt tests · 20</text>
+  <text x="1300" y="237" font-size="12.5" fill="#9E2F22" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">unique</text>
+  <text x="1300" y="259" font-size="12.5" fill="#9E2F22" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">not_null</text>
+  <text x="1300" y="281" font-size="12.5" fill="#9E2F22" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">accepted_values</text>
+  <text x="1300" y="303" font-size="12.5" fill="#9E2F22" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">accepted_range</text>
+  <text x="1300" y="330" font-size="12" fill="#A85347" text-anchor="middle">error and warn severities,</text>
+  <text x="1300" y="347" font-size="12" fill="#A85347" text-anchor="middle">run against every layer</text>
+
+  <!-- Dashboard -->
+  <rect x="1200" y="626" width="200" height="115" rx="10" fill="#E4EEFC" stroke="#2563EB" stroke-width="1.5"/>
+  <text x="1300" y="657" font-size="14" font-weight="700" fill="#173A80" text-anchor="middle">Streamlit dashboard</text>
+  <text x="1300" y="681" font-size="12.5" fill="#2C4C93" text-anchor="middle">capacity · peak hours</text>
+  <text x="1300" y="701" font-size="12.5" fill="#2C4C93" text-anchor="middle">concentration · routes</text>
+  <text x="1300" y="723" font-size="12" fill="#4A67A8" text-anchor="middle">own container, port 8501</text>
+
+  <!-- Edges -->
+  <path d="M 220 262 L 274 248" stroke="#55627A" stroke-width="1.6" fill="none" marker-end="url(#arw)"/>
+  <path d="M 220 282 L 274 362" stroke="#55627A" stroke-width="1.6" fill="none" marker-end="url(#arw)"/>
+
+  <path d="M 540 244 L 620 200" stroke="#55627A" stroke-width="1.6" fill="none" marker-end="url(#arw)"/>
+  <path d="M 540 364 L 620 226" stroke="#55627A" stroke-width="1.6" fill="none" marker-end="url(#arw)"/>
+  <path d="M 540 484 L 606 400" stroke="#EA580C" stroke-width="2.2" fill="none" marker-end="url(#arwDbt)"/>
+
+  <path d="M 880 250 L 880 276" stroke="#55627A" stroke-width="1.8" fill="none" marker-end="url(#arw)"/>
+  <path d="M 880 452 L 880 470" stroke="#EA580C" stroke-width="2" fill="none" marker-end="url(#arwDbt)"/>
+  <path d="M 880 586 L 880 604" stroke="#EA580C" stroke-width="2" fill="none" marker-end="url(#arwDbt)"/>
+
+  <path d="M 1134 684 L 1194 684" stroke="#55627A" stroke-width="1.8" fill="none" marker-end="url(#arw)"/>
+
+  <path d="M 1200 290 L 1154 420" stroke="#C0392B" stroke-width="1.4" fill="none" stroke-dasharray="5 4" marker-end="url(#arwTest)"/>
+
+  <!-- Footer -->
+  <line x1="40" y1="822" x2="1400" y2="822" stroke="#DDE3EC" stroke-width="1"/>
+  <text x="40" y="847" font-size="12.5" fill="#66748E">ELT, not ETL: raw records are never modified, so a modelling fix is a dbt rebuild rather than a re-fetch from an API window that may have closed.</text>
+</svg>

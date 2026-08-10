@@ -221,3 +221,4 @@ __marimo__/
 dbt_packages/
 logs/
 .user.yml
+.DS_Store
